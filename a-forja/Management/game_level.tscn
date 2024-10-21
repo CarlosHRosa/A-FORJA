@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://byb7urdhp6hbw"]
+
+[ext_resource type="PackedScene" uid="uid://cc28pbcfqmv8h" path="res://Terrain/terrain_manager.tscn" id="1_snltv"]
+[ext_resource type="PackedScene" uid="uid://dximhluigqcho" path="res://Factions/Knights/Troops/Pawn/pawn.tscn" id="2_awvnc"]
+[ext_resource type="PackedScene" uid="uid://v4fow8tlxnpo" path="res://Decoration/mushroom.tscn" id="3_alaht"]
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="TerrainManager" parent="." instance=ExtResource("1_snltv")]
+position = Vector2(-44, -247)
+
+[node name="Pawn" parent="." instance=ExtResource("2_awvnc")]
+position = Vector2(989, 348)
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Mushroom" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(192, 0)
+
+[node name="Mushroom2" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(1024, 256)
+
+[node name="Mushroom3" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(768, 128)
+
+[node name="Mushroom4" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(512, 128)
+
+[node name="Mushroom5" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(896, -64)
+
+[node name="Mushroom6" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(448, 256)
+
+[node name="Mushroom7" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(704, 384)
+
+[node name="Mushroom8" parent="Decorations" instance=ExtResource("3_alaht")]
+position = Vector2(256, 320)

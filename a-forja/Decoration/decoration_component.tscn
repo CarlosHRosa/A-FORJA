@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo1m5daj3t37"]
+
+[ext_resource type="Script" path="res://Decoration/decoration_component.gd" id="1_lgmpi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vitkd"]
+size = Vector2(40, 40)
+
+[node name="DecorationComponent" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_lgmpi")
+
+[node name="Texture1" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="Texture2" type="Sprite2D" parent="."]
+position = Vector2(-14, 14)
+
+[node name="Texture3" type="Sprite2D" parent="."]
+position = Vector2(14, 14)
+
+[node name="olision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vitkd")
