@@ -13,7 +13,7 @@ var _attack_animation_name: String = ""
 @export_category("Objects")
 @export var _sprite2D: Sprite2D
 @export var _animation: AnimationPlayer
-
+@export var _attack_area_collision: CollisionShape2D
 
 
 func _physics_process(_delta: float) -> void:
@@ -44,10 +44,11 @@ func _attack()	-> void:
 func _animate() -> void:	
 	if velocity.x > 0:
 		_sprite2D.flip_h = false
+		_attack_area_collision.position.x = 64
 		
 	if velocity.x < 0:
 		_sprite2D.flip_h = true
-	
+		_attack_area_collision.position.x = -64
 	if _can_attack == false:
 		_animation.play(_attack_animation_name)
 		return
@@ -67,3 +68,7 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 func update_collision_layer_mask(_type: String) -> void:
 	if _type == "in":
 		pass
+
+
+func _on_attack_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

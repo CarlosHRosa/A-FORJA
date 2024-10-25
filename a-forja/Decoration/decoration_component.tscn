@@ -3,10 +3,9 @@
 [ext_resource type="Script" path="res://Decoration/decoration_component.gd" id="1_lgmpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vitkd"]
-size = Vector2(40, 40)
+size = Vector2(50, 50)
 
 [node name="DecorationComponent" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_lgmpi")
 
 [node name="Texture1" type="Sprite2D" parent="."]
@@ -18,5 +17,7 @@ position = Vector2(-14, 14)
 [node name="Texture3" type="Sprite2D" parent="."]
 position = Vector2(14, 14)
 
-[node name="olision" type="CollisionShape2D" parent="."]
+[node name="PhysicsColision" type="StaticBody2D" parent="."]
+
+[node name="Colision" type="CollisionShape2D" parent="PhysicsColision"]
 shape = SubResource("RectangleShape2D_vitkd")

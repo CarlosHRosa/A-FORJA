@@ -1,18 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://byb7urdhp6hbw"]
+[gd_scene load_steps=11 format=3 uid="uid://byb7urdhp6hbw"]
 
 [ext_resource type="PackedScene" uid="uid://cc28pbcfqmv8h" path="res://Terrain/terrain_manager.tscn" id="1_snltv"]
 [ext_resource type="PackedScene" uid="uid://dximhluigqcho" path="res://Factions/Knights/Troops/Pawn/pawn.tscn" id="2_awvnc"]
 [ext_resource type="PackedScene" uid="uid://v4fow8tlxnpo" path="res://Decoration/mushroom.tscn" id="3_alaht"]
+[ext_resource type="PackedScene" uid="uid://dotbjq5esnqhk" path="res://Decoration/rocks.tscn" id="4_yfp85"]
+[ext_resource type="PackedScene" uid="uid://dab71qgpovmtd" path="res://Decoration/bushes.tscn" id="5_lg8gm"]
+[ext_resource type="PackedScene" uid="uid://bmwviv83k3ogm" path="res://Decoration/small_grass.tscn" id="6_p3v0d"]
+[ext_resource type="PackedScene" uid="uid://8cigm7u6pw6m" path="res://Decoration/pumpkins.tscn" id="7_v5etf"]
+[ext_resource type="PackedScene" uid="uid://bkaar6aqe8rck" path="res://Decoration/bones.tscn" id="8_pacs3"]
+[ext_resource type="PackedScene" uid="uid://tko0lbwov2v7" path="res://Decoration/Signs/decorations_sign.tscn" id="9_ybb6e"]
+[ext_resource type="PackedScene" uid="uid://ddvya0pmyb5h6" path="res://Resources/Trees/tree.tscn" id="10_1s4bt"]
 
 [node name="GameLevel" type="Node2D"]
 
 [node name="TerrainManager" parent="." instance=ExtResource("1_snltv")]
 position = Vector2(-44, -247)
 
-[node name="Pawn" parent="." instance=ExtResource("2_awvnc")]
-position = Vector2(989, 348)
-
 [node name="Decorations" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Pawn" parent="Decorations" instance=ExtResource("2_awvnc")]
+position = Vector2(989, 348)
 
 [node name="Mushroom" parent="Decorations" instance=ExtResource("3_alaht")]
 position = Vector2(192, 0)
@@ -37,3 +45,66 @@ position = Vector2(704, 384)
 
 [node name="Mushroom8" parent="Decorations" instance=ExtResource("3_alaht")]
 position = Vector2(256, 320)
+
+[node name="Rocks" parent="Decorations" instance=ExtResource("4_yfp85")]
+position = Vector2(192, 128)
+
+[node name="Rocks2" parent="Decorations" instance=ExtResource("4_yfp85")]
+position = Vector2(512, -64)
+
+[node name="Rocks3" parent="Decorations" instance=ExtResource("4_yfp85")]
+position = Vector2(1408, -128)
+
+[node name="Rocks4" parent="Decorations" instance=ExtResource("4_yfp85")]
+position = Vector2(1472, 256)
+
+[node name="Rocks5" parent="Decorations" instance=ExtResource("4_yfp85")]
+position = Vector2(1152, -64)
+
+[node name="Rocks6" parent="Decorations" instance=ExtResource("4_yfp85")]
+position = Vector2(1280, 576)
+
+[node name="Rocks7" parent="Decorations" instance=ExtResource("4_yfp85")]
+position = Vector2(-128, 512)
+
+[node name="Bushes" parent="Decorations" instance=ExtResource("5_lg8gm")]
+position = Vector2(1600, 0)
+
+[node name="Bushes2" parent="Decorations" instance=ExtResource("5_lg8gm")]
+position = Vector2(2304, -128)
+
+[node name="Bushes3" parent="Decorations" instance=ExtResource("5_lg8gm")]
+position = Vector2(640, -192)
+
+[node name="Bushes4" parent="Decorations" instance=ExtResource("5_lg8gm")]
+position = Vector2(1024, 448)
+
+[node name="SmallGrass" parent="Decorations" instance=ExtResource("6_p3v0d")]
+position = Vector2(896, 448)
+
+[node name="Pumpkins" parent="Decorations" instance=ExtResource("7_v5etf")]
+position = Vector2(384, 0)
+
+[node name="Pumpkins2" parent="Decorations" instance=ExtResource("7_v5etf")]
+position = Vector2(1024, 64)
+
+[node name="Bones" parent="Decorations" instance=ExtResource("8_pacs3")]
+position = Vector2(1600, 192)
+
+[node name="Bones2" parent="Decorations" instance=ExtResource("8_pacs3")]
+position = Vector2(1152, 256)
+
+[node name="DecorationsSign" parent="Decorations" instance=ExtResource("9_ybb6e")]
+position = Vector2(1280, 128)
+
+[node name="Tree" parent="Decorations" instance=ExtResource("10_1s4bt")]
+position = Vector2(2432, 64)
+
+[node name="Tree2" parent="Decorations" instance=ExtResource("10_1s4bt")]
+position = Vector2(1024, 128)
+
+[node name="Tree3" parent="Decorations" instance=ExtResource("10_1s4bt")]
+position = Vector2(2752, 128)
+
+[node name="Tree4" parent="Decorations" instance=ExtResource("10_1s4bt")]
+position = Vector2(576, 128)

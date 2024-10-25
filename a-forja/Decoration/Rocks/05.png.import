@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkxtcbd434kwg"
-path="res://.godot/imported/04.png-f71c35c1150af58316df3abe53e7222f.ctex"
+uid="uid://b7jyf4c1dl7ey"
+path="res://.godot/imported/05.png-4487cb81f7671ec616f4fe84322e1138.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Decoration/04.png"
-dest_files=["res://.godot/imported/04.png-f71c35c1150af58316df3abe53e7222f.ctex"]
+source_file="res://Decoration/Rocks/05.png"
+dest_files=["res://.godot/imported/05.png-4487cb81f7671ec616f4fe84322e1138.ctex"]
 
 [params]
 

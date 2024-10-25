@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdjg60asnhlvj"
-path="res://.godot/imported/15.png-1f27c72f0617eab5e3170367d54a845e.ctex"
+uid="uid://urfns2fo2676"
+path="res://.godot/imported/13.png-76da9fdd7c52bdbbc6ce529c97779087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Decoration/15.png"
-dest_files=["res://.godot/imported/15.png-1f27c72f0617eab5e3170367d54a845e.ctex"]
+source_file="res://Decoration/Pumpkins/13.png"
+dest_files=["res://.godot/imported/13.png-76da9fdd7c52bdbbc6ce529c97779087.ctex"]
 
 [params]
 
