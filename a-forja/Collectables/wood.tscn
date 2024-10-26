@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://dymtfcc6omwcd"]
+
+[ext_resource type="PackedScene" uid="uid://ce4mhrirtus8c" path="res://Collectables/collectable_component.tscn" id="1_8xv3u"]
+[ext_resource type="Texture2D" uid="uid://bweicc2m338j2" path="res://Resources/Resources/W_Spawn.png" id="2_fowps"]
+
+[sub_resource type="Animation" id="Animation_5at0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o45y8"]
+resource_name = "spawn"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5pkbm"]
+_data = {
+"RESET": SubResource("Animation_5at0p"),
+"spawn": SubResource("Animation_o45y8")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s3af3"]
+radius = 28.0
+
+[node name="Wood" instance=ExtResource("1_8xv3u")]
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource("2_fowps")
+hframes = 7
+
+[node name="Animation" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_5pkbm")
+}
+autoplay = "spawn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, 20)
+shape = SubResource("CircleShape2D_s3af3")

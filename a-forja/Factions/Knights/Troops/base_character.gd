@@ -9,6 +9,8 @@ var _attack_animation_name: String = ""
 @export var _move_speed: float = 128.0
 @export var _left_attack_name: String = ""
 @export var _right_attack_name: String = ""
+@export var _min_attack: int = 1
+@export var _max_attack: int = 5
 
 @export_category("Objects")
 @export var _sprite2D: Sprite2D
@@ -70,5 +72,6 @@ func update_collision_layer_mask(_type: String) -> void:
 		pass
 
 
-func _on_attack_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_attack_area_body_entered(_body: Node2D) -> void:
+	if _body is PhysicsTree:
+		_body.update_health([_min_attack, _max_attack])

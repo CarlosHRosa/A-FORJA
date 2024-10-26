@@ -108,3 +108,30 @@ position = Vector2(2752, 128)
 
 [node name="Tree4" parent="Decorations" instance=ExtResource("10_1s4bt")]
 position = Vector2(576, 128)
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Hud"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="MarginContainer" parent="Hud/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WoodContainer" type="HBoxContainer" parent="Hud/Control/Container"]
+layout_mode = 2
+
+[node name="WoodIcon" type="TextureRect" parent="Hud/Control/Container/WoodContainer"]
+layout_mode = 2
+
+[node name="WoodCounter" type="Label" parent="Hud/Control/Container/WoodContainer"]
+layout_mode = 2

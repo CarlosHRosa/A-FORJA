@@ -21,3 +21,4 @@ root_node = NodePath("../Collision")
 [node name="AttackArea" type="Area2D" parent="."]
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
