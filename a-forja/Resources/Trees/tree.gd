@@ -5,12 +5,14 @@ class_name PhysicsTree
 const _WOOD_COLLECTABLE: PackedScene = preload("res://Collectables/wood.tscn")
 
 var _is_dead: bool = false
+var wood := 1
 @export_category("Variables")
 @export var _health: int = 15
 @export var _min_health: int = 10
 @export var _max_health: int = 30
 @export var _min_wood: int = 1
 @export var _max_wood: int = 5 
+
 
 @export_category("Objects")
 @export var _animation: AnimationPlayer

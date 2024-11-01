@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://byb7urdhp6hbw"]
+[gd_scene load_steps=12 format=3 uid="uid://byb7urdhp6hbw"]
 
 [ext_resource type="PackedScene" uid="uid://cc28pbcfqmv8h" path="res://Terrain/terrain_manager.tscn" id="1_snltv"]
 [ext_resource type="PackedScene" uid="uid://dximhluigqcho" path="res://Factions/Knights/Troops/Pawn/pawn.tscn" id="2_awvnc"]
@@ -11,9 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://tko0lbwov2v7" path="res://Decoration/Signs/decorations_sign.tscn" id="9_ybb6e"]
 [ext_resource type="PackedScene" uid="uid://ddvya0pmyb5h6" path="res://Resources/Trees/tree.tscn" id="10_1s4bt"]
 [ext_resource type="PackedScene" uid="uid://dcgsm8pichxlu" path="res://Factions/Goblins/Troops/Barrel/torch_goblin.tscn" id="11_yrdfq"]
-[ext_resource type="Texture2D" uid="uid://nq7lixqflnsh" path="res://Resources/Resources/W_Idle.png" id="12_gd47x"]
-[ext_resource type="Texture2D" uid="uid://d08o6de7vl70e" path="res://UI/Ribbons/Ribbon_Blue_3Slides.png" id="12_ktoik"]
-[ext_resource type="Script" path="res://HUD/hud.gd" id="12_ww8tm"]
 
 [node name="GameLevel" type="Node2D"]
 
@@ -116,7 +113,7 @@ position = Vector2(2752, 128)
 position = Vector2(576, 128)
 
 [node name="TorchGoblin" parent="Decorations" instance=ExtResource("11_yrdfq")]
-position = Vector2(959, 29)
+position = Vector2(960, 0)
 
 [node name="Hud" type="CanvasLayer" parent="."]
 
@@ -127,67 +124,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("12_ww8tm")
-
-[node name="Container2" type="MarginContainer" parent="Hud/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.260417
-anchor_bottom = 0.192192
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 56
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="RibbonContainer" type="HBoxContainer" parent="Hud/Control/Container2"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="RibonIcon" type="TextureRect" parent="Hud/Control/Container2/RibbonContainer"]
-custom_minimum_size = Vector2(300, 125.04)
-layout_direction = 3
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("12_ktoik")
 
 [node name="Container" type="MarginContainer" parent="Hud/Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.260417
-anchor_bottom = 0.192192
-theme_override_constants/margin_left = 52
-theme_override_constants/margin_top = 0
-metadata/_edit_use_anchors_ = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="WoodContainer" type="HBoxContainer" parent="Hud/Control/Container"]
 layout_mode = 2
 
-[node name="WoodIcon2" type="TextureRect" parent="Hud/Control/Container/WoodContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("12_gd47x")
-
-[node name="ContainerConterWood" type="MarginContainer" parent="Hud/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.000868056
-anchor_top = -0.0015015
-anchor_right = 0.259549
-anchor_bottom = 0.190691
-theme_override_constants/margin_left = 173
-theme_override_constants/margin_top = 35
-metadata/_edit_use_anchors_ = true
-
-[node name="WoodContainer" type="HBoxContainer" parent="Hud/Control/ContainerConterWood"]
+[node name="WoodIcon" type="TextureRect" parent="Hud/Control/Container/WoodContainer"]
 layout_mode = 2
 
-[node name="WoodCounter" type="Label" parent="Hud/Control/ContainerConterWood/WoodContainer"]
-z_index = 1
+[node name="WoodCounter" type="Label" parent="Hud/Control/Container/WoodContainer"]
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-text = "000"
