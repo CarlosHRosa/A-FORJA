@@ -116,7 +116,7 @@ position = Vector2(2752, 128)
 position = Vector2(576, 128)
 
 [node name="TorchGoblin" parent="Decorations" instance=ExtResource("11_yrdfq")]
-position = Vector2(959, 29)
+position = Vector2(646, -30)
 
 [node name="Hud" type="CanvasLayer" parent="."]
 

@@ -11,7 +11,7 @@ var _is_attacking: bool = false
 @export var _sprite: Sprite2D = null
 @export var _animation: AnimationPlayer = null
 @export var _navigation_agent: NavigationAgent2D = null
-@export var _respawn_timer: Timer = null
+@export var _respawn_timer: Timer = Timer.new()
 
 
 @export_category("Variables")
@@ -37,7 +37,7 @@ func _physics_process(_delta: float) -> void:
 
 	if is_instance_valid(_target):
 		var _new_distance: float = global_position.distance_to(_target.global_position)
-		if not _new_distance > _distance_threshold:
+		if not _new_distance == _distance_threshold:
 			if not _is_attacking:
 				_is_attacking = true
 				
@@ -71,18 +71,19 @@ func _animate() -> void:
 		
 	_animation.play("idle")
 	
-func _on_detection_area_body_exited(_body) -> void:
+func _on_detection_area_body_exited(_body ) -> void:
 	if _body is BaseCharacter:
 		_navigation_agent.set_target_position(global_position)
-		#_respawn_timer.start()
-		#_target = null
+		_respawn_timer.start()
+		print(_respawn_timer)
+		_target = null
 	
-func _on_detection_area_body_entered(_body) -> void:
+func _on_detection_area_body_entered(_body ) -> void:
 	if _body is BaseCharacter:
 		_target = _body
 		
-		#if not _respawn_timer.is_stopped():
-			#_respawn_timer.stop()
+		if not _respawn_timer.is_stopped():
+			_respawn_timer.stop()
 
 		
 func _on_respawn_timer_timeout() -> void:
