@@ -37,7 +37,7 @@ func _physics_process(_delta: float) -> void:
 
 	if is_instance_valid(_target):
 		var _new_distance: float = global_position.distance_to(_target.global_position)
-		if not _new_distance == _distance_threshold:
+		if not _new_distance > _distance_threshold:
 			if not _is_attacking:
 				_is_attacking = true
 				
