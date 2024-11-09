@@ -2,12 +2,10 @@ extends Area2D
 
 class_name CollectableComponent
 
-
+var wood : int = 1
 func _on_body_entered(_body: Node2D) -> void:
 	if _body is BaseCharacter:
-		#_body.add_item({
-				#"item_name": "madeira",
-			 	#"item_amount": [1,5],
-				 #"item_texture":  "res://Resources/Resources/W_Idle_(NoShadow).png"
-			#})
 		queue_free()
+		Globals._wood += wood 
+		print(Globals._wood)
+		

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name BaseCharacter
 
+var wood: int = 1
 var _can_attack: bool = true
 var _attack_animation_name: String = ""
 
@@ -73,5 +74,8 @@ func update_collision_layer_mask(_type: String) -> void:
 
 
 func _on_attack_area_body_entered(_body: Node2D) -> void:
-	if _body is PhysicsTree:
+	if (
+		_body is PhysicsTree or 
+		_body is Warrior
+		):
 		_body.update_health([_min_attack, _max_attack])

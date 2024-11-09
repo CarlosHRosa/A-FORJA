@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://byb7urdhp6hbw"]
+[gd_scene load_steps=16 format=3 uid="uid://byb7urdhp6hbw"]
 
 [ext_resource type="PackedScene" uid="uid://cc28pbcfqmv8h" path="res://Terrain/terrain_manager.tscn" id="1_snltv"]
 [ext_resource type="PackedScene" uid="uid://dximhluigqcho" path="res://Factions/Knights/Troops/Pawn/pawn.tscn" id="2_awvnc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://tko0lbwov2v7" path="res://Decoration/Signs/decorations_sign.tscn" id="9_ybb6e"]
 [ext_resource type="PackedScene" uid="uid://ddvya0pmyb5h6" path="res://Resources/Trees/tree.tscn" id="10_1s4bt"]
 [ext_resource type="PackedScene" uid="uid://dcgsm8pichxlu" path="res://Factions/Goblins/Troops/Barrel/torch_goblin.tscn" id="11_yrdfq"]
+[ext_resource type="PackedScene" uid="uid://biw1y32i8vd16" path="res://Factions/Knights/Troops/warrior.tscn" id="12_ecky7"]
 [ext_resource type="Texture2D" uid="uid://nq7lixqflnsh" path="res://Resources/Resources/W_Idle.png" id="12_gd47x"]
 [ext_resource type="Texture2D" uid="uid://d08o6de7vl70e" path="res://UI/Ribbons/Ribbon_Blue_3Slides.png" id="12_ktoik"]
 [ext_resource type="Script" path="res://HUD/hud.gd" id="12_ww8tm"]
@@ -27,6 +28,7 @@ y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" instance=ExtResource("2_awvnc")]
 position = Vector2(989, 348)
+platform_on_leave = 0
 
 [node name="Mushroom" parent="Decorations" instance=ExtResource("3_alaht")]
 position = Vector2(192, 0)
@@ -118,6 +120,30 @@ position = Vector2(576, 128)
 [node name="TorchGoblin" parent="Decorations" instance=ExtResource("11_yrdfq")]
 position = Vector2(646, -30)
 
+[node name="Warrior" parent="Decorations" instance=ExtResource("12_ecky7")]
+position = Vector2(277, 21)
+disable_mode = 2
+platform_on_leave = 2
+platform_wall_layers = 15
+
+[node name="Warrior2" parent="Decorations" instance=ExtResource("12_ecky7")]
+position = Vector2(405, 143)
+disable_mode = 2
+platform_on_leave = 2
+platform_wall_layers = 15
+
+[node name="Warrior3" parent="Decorations" instance=ExtResource("12_ecky7")]
+position = Vector2(1501, -92)
+disable_mode = 2
+platform_on_leave = 2
+platform_wall_layers = 15
+
+[node name="Warrior4" parent="Decorations" instance=ExtResource("12_ecky7")]
+position = Vector2(93, -176)
+disable_mode = 2
+platform_on_leave = 2
+platform_wall_layers = 15
+
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="Hud"]
@@ -125,6 +151,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 73.0
+offset_top = 61.0
+offset_right = 73.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("12_ww8tm")

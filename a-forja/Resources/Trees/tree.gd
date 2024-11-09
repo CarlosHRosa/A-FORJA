@@ -5,7 +5,7 @@ class_name PhysicsTree
 const _WOOD_COLLECTABLE: PackedScene = preload("res://Collectables/wood.tscn")
 
 var _is_dead: bool = false
-var wood := 1
+var wood : int = 1
 @export_category("Variables")
 @export var _health: int = 15
 @export var _min_health: int = 10
@@ -43,6 +43,7 @@ func _spawn_wood() ->void:
 		_wood.global_position = global_position + Vector2(
 			randi_range(-32, 32), randi_range(-32, 32)
 		)
+		
 			
 		get_tree().root.call_deferred("add_child", _wood)
 			
