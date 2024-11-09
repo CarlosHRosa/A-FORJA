@@ -95,6 +95,11 @@ size = Vector2(64, 64)
 
 [node name="Tree" type="StaticBody2D" node_paths=PackedStringArray("_animation")]
 script = ExtResource("1_dmp28")
+_health = null
+_min_health = null
+_max_health = null
+_min_wood = null
+_max_wood = null
 _animation = NodePath("Animation")
 
 [node name="Texture" type="Sprite2D" parent="."]
